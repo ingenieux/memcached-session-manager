@@ -170,6 +170,7 @@ public class JavaSerializationTranscoder implements SessionAttributesTranscoder 
             final int n = ( (Integer) ois.readObject() ).intValue();
             for ( int i = 0; i < n; i++ ) {
                 final String name = (String) ois.readObject();
+                ObjectInputFilters.enableObjectFilterIfUnprotected(ois);
                 final Object value = ois.readObject();
                 if ( ( value instanceof String ) && ( value.equals( NOT_SERIALIZED ) ) ) {
                     continue;
