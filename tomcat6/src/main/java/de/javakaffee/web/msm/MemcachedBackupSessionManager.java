@@ -704,7 +704,7 @@ public class MemcachedBackupSessionManager extends ManagerBase implements Lifecy
         }
 
         // Process a relevant property change
-        if ( event.getPropertyName().equals( "sessionTimeout" ) ) {
+        if ( "sessionTimeout".equals (event.getPropertyName() ) ) {
             try {
                 setMaxInactiveInterval( ( (Integer) event.getNewValue() ).intValue() * 60 );
             } catch ( final NumberFormatException e ) {

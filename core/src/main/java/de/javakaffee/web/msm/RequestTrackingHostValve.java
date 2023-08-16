@@ -203,7 +203,7 @@ public class RequestTrackingHostValve extends ValveBase {
 			_log.debug("No method set for request " + request.getRequestURI() +
 					(request.getQueryString() != null ? "?" + request.getQueryString() : ""));
 		}
-		return method != null ? method.toLowerCase().equals( "post" ) : false;
+		return method != null ? "post".equals (method.toLowerCase() ) : false;
 	}
 
     private void resetRequestThreadLocal() {
