@@ -1294,7 +1294,7 @@ public class MemcachedSessionService {
      *            the sessionAttributeNames to set
      */
     public void setSessionAttributeFilter( @Nullable final String sessionAttributeFilter ) {
-        if ( sessionAttributeFilter == null || sessionAttributeFilter.trim().equals("") ) {
+        if ( sessionAttributeFilter == null || "".equals(sessionAttributeFilter.trim()) ) {
             _sessionAttributeFilter = null;
             _sessionAttributePattern = null;
         }
