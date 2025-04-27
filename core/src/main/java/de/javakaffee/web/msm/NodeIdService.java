@@ -16,6 +16,7 @@
  */
 package de.javakaffee.web.msm;
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -39,7 +40,7 @@ public class NodeIdService {
     @SuppressWarnings( "unused" )
     private static final Log LOG = LogFactory.getLog( NodeIdService.class );
 
-    private final Random _random = new Random();
+    private final Random _random = new SecureRandom();
 
     /*
      * Manager.remove(session) may be called with sessionIds that already failed before (probably
